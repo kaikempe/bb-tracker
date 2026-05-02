@@ -120,3 +120,7 @@ Requires macOS 12+. 7-day free trial, no credit card required.
 BB Tracker is a commercial product, so the source code is **proprietary and not included in this repository**. This repo exists as a public-facing description of the project for portfolio purposes.
 
 If you're a recruiter or engineer interested in seeing specific parts of the implementation — happy to walk through code in an interview. Reach me at **kai@kempe-family.de**.
+
+---
+
+<sub>BB Tracker is an independent project and is not affiliated with, endorsed by, or sponsored by IE University or Anthology Inc. (Blackboard). All product names, logos, and trademarks are the property of their respective owners.</sub>
