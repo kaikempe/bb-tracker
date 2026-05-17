@@ -1,0 +1,6 @@
+playwright>=1.45
+rumps>=0.4.0
+certifi>=2024.0
+pdfplumber>=0.11
+pyobjc-framework-Cocoa>=10.0
+pyobjc-framework-WebKit>=10.0

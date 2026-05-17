@@ -1,0 +1,41 @@
+BB Tracker — Installation
+═════════════════════════
+
+STEP 1 — Install
+────────────────
+Drag "BB Tracker" into your Applications folder.
+
+
+STEP 2 — IMPORTANT: First launch
+────────────────────────────────
+BB Tracker is not yet notarized by Apple, so macOS will block
+the first launch. You only need to do this once.
+
+   ⚠  DO NOT just double-click the app — macOS will say
+      "BB Tracker is damaged" or "cannot be opened".
+
+   ✓  Instead, RIGHT-CLICK "BB Tracker" in Applications,
+      choose "Open", then click "Open" in the dialog.
+
+If macOS still blocks it (common on macOS Sequoia / 15+):
+
+   1. Try to open it once (it will be blocked).
+   2. Open System Settings → Privacy & Security.
+   3. Scroll down to the Security section.
+   4. You'll see: "BB Tracker was blocked from use".
+   5. Click "Open Anyway".
+   6. Confirm with your Mac password.
+
+
+STEP 3 — Use it
+───────────────
+BB Tracker lives in your menu bar (top-right, near the clock).
+Click the icon to see your grades and attendance.
+
+On first launch, a window will guide you through signing
+in to Blackboard. You only do this once.
+
+
+────────────────────────────────────────────────────────────
+Free trial: 7 days, full features.
+Need help? bblivetracker@gmail.com

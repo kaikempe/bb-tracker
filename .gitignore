@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+.env
+.venv/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.spec
+
+# App bundle (large binary)
+*.dmg
+*.app/
+
+# Runtime data (personal/sensitive)
+browser_data/
+data.json
+courses.json
+config.json
+menubar.log
+
+# Logs and debug
+debug/
+*.log
+
+# Claude Code
+.claude/
+memory/
+
+# IDE
+.idea/
+.vscode/
+*.swp

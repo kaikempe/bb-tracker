@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BB Tracker — License activated</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a0a0f;color:#e8e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+       display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px}
+  .card{max-width:440px}
+  h2{font-size:22px;font-weight:700;margin-bottom:12px}
+  p{color:#6b6b85;font-size:14px;line-height:1.6;margin-bottom:20px}
+  .btn{display:inline-block;background:#7c6fff;color:#fff;padding:12px 28px;border-radius:10px;
+       text-decoration:none;font-weight:600;font-size:15px;transition:opacity .15s}
+  .btn:hover{opacity:.88}
+  .btn-secondary{display:inline-block;color:#6b6b85;font-size:13px;text-decoration:none;margin-top:14px}
+  .btn-secondary:hover{color:#e8e8f0}
+  .spinner{width:36px;height:36px;border:3px solid #1e1e2e;border-top-color:#7c6fff;
+           border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .check{width:56px;height:56px;border-radius:50%;background:rgba(74,222,128,.12);
+         border:2px solid #4ade80;color:#4ade80;font-size:28px;font-weight:700;
+         display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+  #success{display:none}
+</style>
+</head>
+<body>
+
+<div class="card" id="loading">
+  <div class="spinner"></div>
+  <h2>Activating BB Tracker…</h2>
+  <p>Opening the app to activate your license.</p>
+</div>
+
+<div class="card" id="success">
+  <div class="check">✓</div>
+  <h2>License activated</h2>
+  <p>BB Tracker is ready to use — open it from your menu bar (top-right of your screen, near the clock).</p>
+  <p style="font-size:12px">Don't have BB Tracker installed yet?</p>
+  <a class="btn" href="/">Download BB Tracker →</a>
+  <br>
+  <a class="btn-secondary" id="retry-btn" href="#">App didn't open? Try activation again</a>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const key = params.get('key') || '';
+  const deepLink = 'bbtracker://activate?key=' + encodeURIComponent(key);
+  document.getElementById('retry-btn').href = deepLink;
+
+  // Fire the deep link to activate the app silently
+  window.location.href = deepLink;
+
+  // Browser can't observe whether the URL scheme handler ran, so after a brief
+  // delay we swap to the success state — the LS-side license is valid the
+  // moment the buyer reaches this page.
+  setTimeout(() => {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }, 1500);
+</script>
+</body>
+</html>

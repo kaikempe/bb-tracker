@@ -1,0 +1,5 @@
+{
+  "version": "1.3.2",
+  "url": "https://bblivetracker.netlify.app/BBTracker.dmg",
+  "notes": "Main app window with Dashboard, Courses, Calendar (coming soon) and Settings tabs. Menubar gets an 'Open BB Tracker' item for quick access."
+}
