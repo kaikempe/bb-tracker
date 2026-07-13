@@ -2,7 +2,7 @@
   <img src="app_icon.png" width="128" alt="BB Tracker icon">
   <h1>BB Tracker</h1>
   <p><strong>Blackboard, in your menu bar.</strong></p>
-  <p>See your IE University grades and remaining absences at a glance — without opening Blackboard.</p>
+  <p>Every grade, every absence, every deadline, and your GPA — without opening Blackboard.</p>
   <p>
     <a href="https://bblivetracker.netlify.app">Download</a>
     &nbsp;·&nbsp;
@@ -16,45 +16,64 @@
 
 ## At a glance
 
-<img src="screenshots/menu-open.png" alt="BB Tracker open in the menu bar" width="720">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/menubar-dark.png">
+  <img src="screenshots/menubar-light.png" alt="BB Tracker open in the menu bar — every course with its grade and absences left" width="720">
+</picture>
 
-A small indicator lives in your menu bar. Open it to see every course with the grade you have so far, how many absences you've used, and how many you have left before the 20% cap kicks in.
+A small indicator lives in your menu bar — your GPA can sit right next to the clock. Open it to see every course with the grade you have so far and how many absences you have left before the 20% cap kicks in, riskiest course first.
 
 ## What it does
 
 - **Attendance, computed.** Pulls your present / late / absent counts from Blackboard Ultra and shows how many absences you can still take per course before crossing the 80% rule.
-- **Weighted grades.** Reads each syllabus, parses the grading weights, and shows what you have so far — even when Blackboard only shows a flat overall.
-- **MyLab / Pearson integration.** Course uses Pearson? Those assignments show up next to your Blackboard ones in one place.
-- **Announcements with notifications.** New announcement marked *"deadline"*, *"exam"*, or *"mandatory"* triggers a macOS notification — the rest stay quiet.
+- **Grades that match your transcript.** Shows Blackboard's own calculated course total — the number that ends up on your transcript — with syllabus-weighted math as a fallback.
+- **A real GPA.** The same math the registrar uses: language and lab courses left out, retakes replace fails, credits weight each course.
+- **What-if projector.** Type a score for the final and watch your course grade move — or ask what you need to pass.
+- **Deadlines that tick themselves off.** Every due date from Blackboard and Pearson MyLab in one To-Dos list. Click one and you land on the assignment itself.
+- **Pearson MyLab integration.** Course uses Pearson? Those assignments and scores show up next to your Blackboard ones.
+- **Announcements with notifications.** A new announcement marked *"deadline"*, *"exam"*, or *"mandatory"* triggers a macOS notification — the rest stay quiet.
 - **Automatic.** Refreshes every two hours in the background. No tabs to keep open.
 
 ## Screenshots
 
-<table>
-  <tr>
-    <td width="50%"><img src="screenshots/settings.png" alt="Settings screen"></td>
-    <td width="50%"><img src="screenshots/settings-rules.png" alt="Attendance rules"></td>
-  </tr>
-  <tr>
-    <td colspan="2"><img src="screenshots/website.png" alt="Website"></td>
-  </tr>
-</table>
+**Dashboard** — every course, its attendance budget, and a term grade projector:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dashboard-dark.png">
+  <img src="screenshots/dashboard-light.png" alt="Dashboard with course cards, attendance, and term grade projector">
+</picture>
+
+**To-Dos** — every deadline from Blackboard and Pearson in one list:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/todos-dark.png">
+  <img src="screenshots/todos-light.png" alt="To-Dos view with deadlines from Blackboard and Pearson">
+</picture>
+
+**Transcript** — GPA computed the way the registrar computes it:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/transcript-dark.png">
+  <img src="screenshots/transcript-light.png" alt="Transcript view with registrar-style GPA">
+</picture>
+
+<sub>The app follows your system appearance — every screen has a light and a dark version.</sub>
 
 ## How it works
 
-You log in to your IE Microsoft account once. BB Tracker keeps a saved browser session (the same way Safari or Chrome would) and uses it to read your own course data in the background. Everything stays on your Mac — nothing about your grades, attendance, or login leaves your machine.
+You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data directly from Blackboard's API in the background — no bundled browser, no servers in between. Everything stays on your Mac.
 
-When a scrape finishes, the result lives in `~/Library/Application Support/BBTracker/` as plain JSON. The menu bar reads from that.
+When a sync finishes, the result lives in `~/Library/Application Support/BBTracker/` as plain JSON. The menu bar and dashboard read from that.
 
 ## Privacy
 
 - **Local-only.** Your Blackboard cookies, grades, and attendance never leave your Mac.
 - **No analytics.** No telemetry, no crash uploads.
-- **License check.** The only network call BB Tracker makes outside your own Blackboard is a weekly license-status ping to Lemon Squeezy — nothing more.
+- **License check.** The only network call BB Tracker makes outside your own Blackboard and Pearson accounts is a weekly license-status ping to Lemon Squeezy — nothing more.
 
 ## Pricing
 
-7-day free trial. Then a small one-time / yearly fee — see the [download page](https://bblivetracker.netlify.app) for current pricing.
+7-day free trial, no card needed. Then a small one-time / yearly fee — see the [download page](https://bblivetracker.netlify.app) for current pricing.
 
 ## System requirements
 
