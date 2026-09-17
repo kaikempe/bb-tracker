@@ -18,7 +18,7 @@
 
 I got tired of logging into Blackboard five times a day just to check if I could afford to skip one more class. So I built a little menu bar app for myself that kept track of it. Then classmates saw it on my screen and started asking where they could get it.
 
-That's when it turned into a real project. I've been building it out ever since: proper grade tracking, a GPA that actually matches the transcript, deadlines, Pearson MyLab, all of it. Right now I'm polishing everything for the official launch in September, ready for the start of the semester.
+That's when it turned into a real project. I've been building it out ever since: proper grade tracking, a GPA that actually matches the transcript, deadlines, exam dates, Pearson MyLab, all of it. It's out, it's in use, and I'm still the one who opens it first thing every morning.
 
 ## At a glance
 
@@ -34,8 +34,11 @@ A small indicator lives in your menu bar (your GPA can sit right next to the clo
 - **Attendance, computed.** It pulls your present / late / absent counts from Blackboard and tells you exactly how many classes you can still miss per course before crossing the 80% rule. No more counting on your fingers.
 - **Grades that match your transcript.** It shows Blackboard's own calculated course total, the same number that ends up on your transcript. If a course doesn't have one, it parses the syllabus weights and does the math itself.
 - **A real GPA.** Computed the way the registrar computes it: language and lab courses left out, retakes replacing fails, credits weighting each course.
-- **What-if projector.** Type a score for the final and watch your course grade move. Or flip it around and ask what you need to pass.
+- **What-if projector.** Type a score for the final and watch your course grade move. Or flip it around and ask what you need to pass. It projects the whole term at once, and you can mark the quiz your professor drops so it stops dragging the number down.
 - **Every deadline in one list.** Blackboard and Pearson MyLab due dates together in one To-Dos view. Click one and you land on the actual assignment.
+- **Exams too, which Blackboard never lists.** There is no gradebook column for a midterm or a final, so the highest-stakes dates of the term were the ones nothing could see. BB Tracker reads which session your syllabus calls an exam and takes that session's date and room from your timetable.
+- **In your calendar.** Every deadline and exam in a calendar of its own, in the Calendar app you already check. Each sync keeps it right: a due date that moves updates in place instead of leaving yesterday's copy behind.
+- **It notices when the syllabus changes.** A professor can reweight the grading mid-term and tell nobody. BB Tracker re-reads each syllabus, says what moved, and works your projected grade out against the new one.
 - **Pearson MyLab built in.** If a course runs on Pearson, those assignments and scores show up next to your Blackboard ones.
 - **Announcements that know when to bother you.** A new announcement mentioning a deadline, exam or something mandatory triggers a macOS notification. The rest stay quiet.
 - **Fully automatic.** It refreshes every two hours in the background. No tabs to keep open, nothing to maintain.
@@ -76,7 +79,7 @@ When a sync finishes, the result lives in `~/Library/Application Support/BBTrack
 I built this for myself first, so it works the way I'd want any app to work with my own grades:
 
 - **Local-only.** Your Blackboard cookies, grades and attendance never leave your Mac.
-- **No analytics.** No telemetry, no crash uploads, nothing phoning home.
+- **No analytics.** No telemetry, no third-party SDKs, nothing phoning home. Crash reporting exists, but it is off unless you switch it on during setup, and what it sends carries no grades and no course names.
 - **One exception.** The only network call outside your own Blackboard and Pearson accounts is a weekly license check with Lemon Squeezy. That's it.
 
 ## Pricing
