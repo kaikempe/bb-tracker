@@ -80,11 +80,11 @@ I built this for myself first, so it works the way I'd want any app to work with
 
 - **Local-only.** Your Blackboard cookies, grades and attendance never leave your Mac.
 - **No analytics.** No telemetry, no third-party SDKs, nothing phoning home. Crash reporting exists, but it is off unless you switch it on during setup, and what it sends carries no grades and no course names.
-- **One exception.** The only network call outside your own Blackboard and Pearson accounts is a weekly license check with Lemon Squeezy. That's it.
+- **One exception.** The only network call outside your own Blackboard and Pearson accounts is the app asking the download page whether there's a newer version. That's it.
 
-## Pricing
+## Price
 
-7-day free trial, no card needed. After that it's a small one-time or yearly fee. Current pricing is on the [download page](https://bblivetracker.netlify.app).
+Free. No trial, no card, no account. If a price ever comes back it won't apply to installs from before then.
 
 ## System requirements
 
