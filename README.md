@@ -27,21 +27,24 @@ That's when it turned into a real project. I've been building it out ever since:
   <img src="screenshots/menubar-light.png" alt="BB Tracker open in the menu bar, every course with its grade and absences left" width="720">
 </picture>
 
-A small indicator lives in your menu bar (your GPA can sit right next to the clock). Open it and you see every course with the grade you have so far and how many absences you have left before the 20% cap kicks in, riskiest course first.
+A small indicator lives in your menu bar (your GPA can sit right next to the clock). Open it and you see every course with the grade you have so far and how many absences you have left before your program's limit, riskiest course first.
 
 ## What it does
 
-- **Attendance, computed.** It pulls your present / late / absent counts from Blackboard and tells you exactly how many classes you can still miss per course before crossing the 80% rule. No more counting on your fingers.
+- **Attendance, computed.** It pulls your present / late / absent counts from Blackboard and tells you exactly how many classes you can still miss per course before crossing your program's absence limit (20% by default, adjustable from 10% to 30%). No more counting on your fingers.
 - **Grades that match your transcript.** It shows Blackboard's own calculated course total, the same number that ends up on your transcript. If a course doesn't have one, it parses the syllabus weights and does the math itself.
-- **A real GPA.** Computed the way the registrar computes it: language and lab courses left out, retakes replacing fails, credits weighting each course.
+- **A real GPA.** Computed the way the registrar computes it: every graded course counts, weighted by the credits in its syllabus, and a retake replaces the fail. Only pass/fail and zero-credit courses stay out.
 - **What-if projector.** Type a score for the final and watch your course grade move. Or flip it around and ask what you need to pass. It projects the whole term at once, and you can mark the quiz your professor drops so it stops dragging the number down.
 - **Every deadline in one list.** Blackboard and Pearson MyLab due dates together in one To-Dos view. Click one and you land on the actual assignment.
-- **Exams too, which Blackboard never lists.** There is no gradebook column for a midterm or a final, so the highest-stakes dates of the term were the ones nothing could see. BB Tracker reads which session your syllabus calls an exam and takes that session's date and room from your timetable.
+- **Exams too, which Blackboard never lists.** There is no gradebook column for a midterm, a quiz or a presentation, so the highest-stakes dates of the term were the ones nothing could see. BB Tracker reads which session your syllabus calls graded and takes that session's date and room from your timetable.
+- **Plan time off.** Pick the days you'd be away and see which classes you'd miss, how many absences each course has left after, and whether a midterm or quiz sits inside the trip or the day you're back. Or take one of the cheapest long weekends left this term.
+- **Group work, handled.** A teammate submitted for the group? Mark it done straight from the menu bar and the reminders stop.
 - **In your calendar.** Every deadline and exam in a calendar of its own, in the Calendar app you already check. Each sync keeps it right: a due date that moves updates in place instead of leaving yesterday's copy behind.
 - **It notices when the syllabus changes.** A professor can reweight the grading mid-term and tell nobody. BB Tracker re-reads each syllabus, says what moved, and works your projected grade out against the new one.
 - **Pearson MyLab built in.** If a course runs on Pearson, those assignments and scores show up next to your Blackboard ones.
 - **Announcements that know when to bother you.** A new announcement mentioning a deadline, exam or something mandatory triggers a macOS notification. The rest stay quiet.
-- **Fully automatic.** It refreshes every two hours in the background. No tabs to keep open, nothing to maintain.
+- **A Monday digest.** One notification at the start of the week: your average, what's due, and any course below passing.
+- **Fully automatic.** It refreshes every two hours in the background and updates itself. No tabs to keep open, nothing to maintain.
 
 ## Screenshots
 
@@ -52,11 +55,18 @@ A small indicator lives in your menu bar (your GPA can sit right next to the clo
   <img src="screenshots/dashboard-light.png" alt="Dashboard with course cards, attendance, and term grade projector">
 </picture>
 
-**To-Dos.** Every deadline from Blackboard and Pearson in one list:
+**To-Dos.** Every deadline from Blackboard and Pearson in one list, exams included:
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="screenshots/todos-dark.png">
   <img src="screenshots/todos-light.png" alt="To-Dos view with deadlines from Blackboard and Pearson">
+</picture>
+
+**Time off.** Pick the days, see what the trip costs:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/timeoff-dark.png">
+  <img src="screenshots/timeoff-light.png" alt="Time off: a picked trip with the classes it misses, absences left per course, and a quiz the day you're back">
 </picture>
 
 **Transcript.** Your GPA, computed the way the registrar computes it:
@@ -70,7 +80,7 @@ A small indicator lives in your menu bar (your GPA can sit right next to the clo
 
 ## How it works
 
-You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data straight from Blackboard's API in the background. No bundled browser, no servers in between, everything stays on your Mac.
+You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data straight from Blackboard's API in the background. No servers in between, everything stays on your Mac.
 
 When a sync finishes, the result lives in `~/Library/Application Support/BBTracker/` as plain JSON, and the menu bar and dashboard read from that.
 
@@ -80,7 +90,7 @@ I built this for myself first, so it works the way I'd want any app to work with
 
 - **Local-only.** Your Blackboard cookies, grades and attendance never leave your Mac.
 - **No analytics.** No telemetry, no third-party SDKs, nothing phoning home. Crash reporting exists, but it is off unless you switch it on during setup, and what it sends carries no grades and no course names.
-- **One exception.** The only network call outside your own Blackboard and Pearson accounts is the app asking the download page whether there's a newer version. That's it.
+- **What it connects to.** Your own Blackboard and Pearson accounts, and the download page, to ask whether there's a newer version. The first time it needs them, it also downloads a small Node runtime (pypi.org) and a private browser (cdn.playwright.dev), and sends nothing to either. That's the full list.
 
 ## Price
 
