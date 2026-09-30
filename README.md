@@ -98,7 +98,7 @@ Free. No trial, no card, no account. If a price ever comes back it won't apply t
 
 ## System requirements
 
-- macOS 12 (Monterey) or later, Apple Silicon or Intel
+- macOS 12 (Monterey) or later on an Apple Silicon Mac (M1 or later). Intel Macs aren't supported yet
 - An IE University Blackboard account
 
 ## Support
