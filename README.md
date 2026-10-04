@@ -1,7 +1,7 @@
 <div align="center">
   <img src="app_icon.png" width="128" alt="BB Tracker icon">
   <h1>BB Tracker</h1>
-  <p><strong>Blackboard, in your Mac's menu bar.</strong></p>
+  <p><strong>Blackboard, in your Mac's menu bar or your Windows taskbar.</strong></p>
   <p>Grades, absences, deadlines and your GPA, without ever opening Blackboard.</p>
   <p>
     <a href="https://bblivetracker.netlify.app">Download</a>
@@ -27,7 +27,7 @@ That's when it turned into a real project. I've been building it out ever since:
   <img src="screenshots/menubar-light.png" alt="BB Tracker open in the menu bar, every course with its grade and absences left" width="720">
 </picture>
 
-A small indicator lives in your menu bar (your GPA can sit right next to the clock). Open it and you see every course with the grade you have so far and how many absences you have left before your program's limit, riskiest course first.
+A small indicator lives in your menu bar on a Mac, or by the clock on Windows (your GPA can sit right next to it). Open it and you see every course with the grade you have so far and how many absences you have left before your program's limit, riskiest course first.
 
 ## What it does
 
@@ -39,10 +39,10 @@ A small indicator lives in your menu bar (your GPA can sit right next to the clo
 - **Exams too, which Blackboard never lists.** There is no gradebook column for a midterm, a quiz or a presentation, so the highest-stakes dates of the term were the ones nothing could see. BB Tracker reads which session your syllabus calls graded and takes that session's date and room from your timetable.
 - **Plan time off.** Pick the days you'd be away and see which classes you'd miss, how many absences each course has left after, and whether a midterm or quiz sits inside the trip or the day you're back. Or pick a suggested long weekend that costs you the fewest classes.
 - **Group work, handled.** A teammate submitted for the group? Mark it done straight from the menu bar and the reminders stop.
-- **In your calendar.** Every deadline and exam in a calendar of its own, in the Calendar app you already check. Each sync keeps it right: a due date that moves updates in place instead of leaving yesterday's copy behind.
+- **In your calendar.** Every deadline and exam in a calendar of its own, tied to your IE Outlook account. Each sync keeps it right: a due date that moves updates in place instead of leaving yesterday's copy behind.
 - **It notices when the syllabus changes.** A professor can reweight the grading mid-term and tell nobody. BB Tracker re-reads each syllabus, says what moved, and works your projected grade out against the new one.
 - **Pearson MyLab built in.** If a course runs on Pearson, those assignments and scores show up next to your Blackboard ones.
-- **Announcements that know when to bother you.** A new announcement mentioning a deadline, exam or something mandatory triggers a macOS notification. The rest stay quiet.
+- **Announcements that know when to bother you.** A new announcement mentioning a deadline, exam or something mandatory triggers a notification. The rest stay quiet.
 - **A Monday digest.** One notification at the start of the week: your average, what's due, and any course below passing.
 - **Fully automatic.** It refreshes every two hours in the background and updates itself. No tabs to keep open, nothing to maintain.
 
@@ -80,15 +80,15 @@ A small indicator lives in your menu bar (your GPA can sit right next to the clo
 
 ## How it works
 
-You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data straight from Blackboard's API in the background. No servers in between, everything stays on your Mac.
+You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data straight from Blackboard's API in the background. No servers in between, everything stays on your computer.
 
-When a sync finishes, the result lives in `~/Library/Application Support/BBTracker/` as plain JSON, and the menu bar and dashboard read from that.
+When a sync finishes, the result lives in `~/Library/Application Support/BBTracker/` (`%APPDATA%\BBTracker` on Windows) as plain JSON, and the menu bar and dashboard read from that.
 
 ## Privacy
 
 I built this for myself first, so it works the way I'd want any app to work with my own grades:
 
-- **Local-only.** Your Blackboard cookies, grades and attendance never leave your Mac.
+- **Local-only.** Your Blackboard cookies, grades and attendance never leave your computer.
 - **No analytics.** No third-party SDKs, nothing tracking you. Crash reporting exists, but it is off unless you switch it on during setup, and what it sends carries no grades and no course names.
 - **What it connects to.** Your own Blackboard and Pearson accounts, and the download page, to ask whether there's a newer version. The first time it needs them, it also downloads a small Node runtime (pypi.org) and a private browser (cdn.playwright.dev), and sends nothing to either. That's the full list.
 - **What gets counted.** Update checks, website visits and download clicks are added up into daily totals, so I can tell whether anyone uses the app. No IP address, no device details, no identifier: only how many, never who.
@@ -99,7 +99,8 @@ Free. No trial, no card, no account. If a price ever comes back it won't apply t
 
 ## System requirements
 
-- macOS 12 (Monterey) or later on an Apple Silicon Mac (M1 or later). Intel Macs aren't supported yet
+- **Mac:** macOS 12 (Monterey) or later on an Apple Silicon Mac (M1 or later). Intel Macs aren't supported yet
+- **Windows:** Windows 10 or 11 (64-bit). The installer needs no admin rights; it isn't signed yet, so Windows may show a "protected your PC" box once (More info, then Run anyway)
 - An IE University Blackboard account
 
 ## Support
