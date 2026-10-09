@@ -35,12 +35,12 @@ A small indicator lives in your menu bar on a Mac, or by the clock on Windows (y
 - **Grades that match your transcript.** It shows Blackboard's own calculated course total, the same number that ends up on your transcript. If a course doesn't have one, it parses the syllabus weights and does the math itself.
 - **A real GPA.** Computed the way the registrar computes it: every graded course counts, weighted by the credits in its syllabus, and a retake replaces the fail. Only pass/fail and zero-credit courses stay out.
 - **What-if projector.** Type a score for the final and watch your course grade move. Or flip it around and ask what you need to pass. It projects the whole term at once, and you can mark the quiz your professor drops so it stops dragging the number down.
-- **Every deadline in one list.** Blackboard and Pearson MyLab due dates together in one To-Dos view. Click one and you land on the actual assignment.
+- **Every deadline in one list.** Blackboard and Pearson MyLab due dates together in one To-Dos view. Click one and you land on the actual assignment. You can add your own to-dos too, for homework, presentations or anything else with a date.
 - **Exams too, which Blackboard never lists.** There is no gradebook column for a midterm, a quiz or a presentation, so the highest-stakes dates of the term were the ones nothing could see. BB Tracker reads which session your syllabus calls graded and takes that session's date and room from your timetable.
-- **Plan time off.** Pick the days you'd be away and see which classes you'd miss, how many absences each course has left after, and whether a midterm or quiz sits inside the trip or the day you're back. Or pick a suggested long weekend that costs you the fewest classes.
+- **Plan time off.** Pick the days you'd be away and see which classes you'd miss, how many absences each course has left after, and whether a midterm or quiz sits inside the trip or the day you're back. Or pick a suggested long weekend that costs you the fewest classes. Only skipping a day or a single class? Switch to Skip classes and tick the ones you'd miss.
 - **Group work, handled.** A teammate submitted for the group? Mark it done straight from the menu bar and the reminders stop.
 - **In your calendar.** Every deadline and exam in a calendar of its own, tied to your IE Outlook account. Each sync keeps it right: a due date that moves updates in place instead of leaving yesterday's copy behind.
-- **It notices when the syllabus changes.** A professor can reweight the grading mid-term and tell nobody. BB Tracker re-reads each syllabus, says what moved, and works your projected grade out against the new one.
+- **It notices when the syllabus changes.** A professor can reweight the grading mid-term and tell nobody. BB Tracker re-reads each current syllabus daily, says what moved, and works your projected grade out against the new one.
 - **Pearson MyLab built in.** If a course runs on Pearson, those assignments and scores show up next to your Blackboard ones.
 - **Announcements that know when to bother you.** A new announcement mentioning a deadline, exam or something mandatory triggers a notification. The rest stay quiet.
 - **A Monday digest.** One notification at the start of the week: your average, what's due, and any course below passing.
@@ -80,7 +80,7 @@ A small indicator lives in your menu bar on a Mac, or by the clock on Windows (y
 
 ## How it works
 
-You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data straight from Blackboard's API in the background. No servers in between, everything stays on your computer.
+You log in with your IE Microsoft account once. BB Tracker keeps that login session and uses it to sync your own course data straight from Blackboard's API in the background. No server in between holds your data: your grades and attendance stay on your computer.
 
 When a sync finishes, the result lives in `~/Library/Application Support/BBTracker/` (`%APPDATA%\BBTracker` on Windows) as plain JSON, and the menu bar and dashboard read from that.
 
