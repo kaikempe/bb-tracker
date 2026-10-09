@@ -91,7 +91,7 @@ I built this for myself first, so it works the way I'd want any app to work with
 - **Local-only.** Your Blackboard cookies, grades and attendance never leave your computer.
 - **No analytics.** No third-party SDKs, nothing tracking you. Crash reporting exists, but it is off unless you switch it on during setup, and what it sends carries no grades and no course names.
 - **What it connects to.** Your own Blackboard and Pearson accounts, and the download page, to ask whether there's a newer version. The first time it needs them, it also downloads a small Node runtime (pypi.org) and a private browser (cdn.playwright.dev), and sends nothing to either. That's the full list.
-- **What gets counted.** Update checks, website visits and download clicks are added up into daily totals, so I can tell whether anyone uses the app. No IP address, no device details, no identifier: only how many, never who.
+- **What gets counted.** Update checks, website visits and download clicks are added up into daily totals, so I can tell whether anyone uses the app. To count different computers rather than repeat launches, each update check also carries a random ID the app makes on first run, plus the app version and Mac or Windows. It isn't derived from your computer, your Blackboard account or your name, and the server keeps only a one-way hash of it. No IP address, no device details, no name, no account. Delete `install_id.txt` in the app folder and you're a new, unrelated copy.
 
 ## Price
 
